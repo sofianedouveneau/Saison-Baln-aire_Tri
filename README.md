@@ -3,6 +3,7 @@ L’objectif n’était pas seulement de créer la structure relationnelle, mais
 
 J'ai d'abord rédigé entièrement le script SQL à la main. Cela impliquait de supprimer les tables existantes afin de m'assurer que le script ne rencontre pas d'erreurs, définir préciément les clés primaires et étrangères, d'ajouter les contraintes ON DELETE CASCADE, et de choisir les types de données adaptés (par exemple DOUBLE PRECISION pour les coordonnées et DATE pour les dates) pour garantir ultérieurement, une utiliation fiable et simple des données.
 Ensuite, j’ai étudié la modélisation et la génération automatique réalisées avec l’AGL Looping. À partir du modèle conceptuel de données (MCD), l’outil produit automatiquement le modèle physique (MPD) et le script SQL correspondant. Les associations maillées sont transformées en tables intermédiaires intégrant les clés primaires comme clés étrangères, tandis que les associations fonctionnelles sont traduites selon la cardinalité dite 'portante'.
+
 *Portante est un terme que j’utilise personnellement pour décrire la cardinalité de la table participantesituée du côté de la cardinalité max de 1 car elle “porte” la clé étrangère de l’autre table.*
 
 L’approche AGL présente plusieurs avantages :
