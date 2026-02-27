@@ -8,7 +8,7 @@ Ensuite, j’ai étudié la modélisation et la génération automatique réalis
 
 L’approche AGL présente plusieurs avantages : un gain de temps important, une réduction des erreurs syntaxiques et une génération rapide d’un schéma cohérent.
 
-Cependant, comme toute abstraction, elle a ses limites. Le code généré est souvent plus générique, parfois moins optimisé et moins lisible. Incluant des options qui ne sont pas toujours les plus pertinents selon le contexte. À l’inverse, l’écriture manuelle est plus longue mais offre un contrôle total sur la structure et les optimisations.
+Cependant, elle a ses limites. Le code généré est souvent plus générique, parfois moins optimisé et moins lisible. Incluant des options qui ne sont pas toujours les plus pertinents selon le contexte. À l’inverse, l’écriture manuelle est plus longue mais offre un contrôle total sur la structure et les optimisations.
 
 La phase de peuplement des tables a également été déterminante. J’ai d’abord importé les fichiers CSV dans des tables temporaires afin de centraliser et nettoyer les données. Cette étape intermédiaire m’a permis d’utiliser des transformations comme SELECT DISTINCT, LPAD, TO_DATE ou encore le remplacement des virgules dans les coordonnées pour garantir la cohérence des types.
 Pour les tables analyses et evenements, les fichiers sources ne contenaient pas d’identifiants uniques. J’ai donc modifié le script en ajoutant GENERATED ALWAYS AS IDENTITY afin de générer automatiquement une clé primaire pour chaque enregistrement. J’ai aussi ajusté certains types (coordonnées, dates) afin de rendre les données exploitables dans d’autres contextes (requêtes, analyses, visualisations).
